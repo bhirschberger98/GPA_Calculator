@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText grade3;
     private EditText grade4;
     private EditText grade5;
+    private TextView gpa;
     private Button button;
     private ConstraintLayout layout;
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         grade5 = findViewById(R.id.grade5);
         button = findViewById(R.id.button);
         layout = findViewById(R.id.layout);
+        gpa = findViewById(R.id.gpa);
     }
 
     public void calculateGrade(View view) {
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Double.parseDouble(grade3.getText().toString()) +
                 Double.parseDouble(grade4.getText().toString()) +
                 Double.parseDouble(grade5.getText().toString())) / 5;
-        Toast.makeText(this, "" + avg, Toast.LENGTH_SHORT).show();
+        gpa.setText("" + avg);
         if (avg >= 80) {
             layout.setBackgroundColor(getResources().getColor(R.color.green));
         } else if (avg >= 60 && avg < 80) {
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         grade3.setText(null);
         grade4.setText(null);
         grade5.setText(null);
+
         layout.setBackgroundColor(getResources().getColor(R.color.white));
         button.setOnClickListener(this::calculateGrade);
         button.setText(R.string.calc_label);
