@@ -5,4 +5,7 @@
     <string name="grade_3">Grade 3</string>
     <string name="grade_4">Grade 4</string>
     <string name="grade_5">Grade 5</string>
+    <string name="empty_field">Please put a grade in all fields</string>
+    <string name="calc_label">Calculate Grade</string>
+    <string name="clear_label">Clear Label</string>
 </resources>
